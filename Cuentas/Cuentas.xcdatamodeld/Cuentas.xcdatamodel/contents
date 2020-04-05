@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cuenta" representedClassName="Cuenta" syncable="YES">
+        <attribute name="codigo" attributeType="String" syncable="YES"/>
+        <attribute name="fechaCarga" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fechaCompra" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="monto" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numero" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="serie" attributeType="String" syncable="YES"/>
+        <attribute name="tipoComprobante" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <relationship name="proveedor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Proveedor" inverseName="cuentas" inverseEntity="Proveedor" syncable="YES"/>
+    </entity>
+    <entity name="Proveedor" representedClassName="Proveedor" syncable="YES">
+        <attribute name="nombre" attributeType="String" syncable="YES"/>
+        <attribute name="ramo" attributeType="String" syncable="YES"/>
+        <attribute name="rut" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="cuentas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Cuenta" inverseName="proveedor" inverseEntity="Cuenta" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cuenta" positionX="-542.87109375" positionY="-106.9921875" width="128" height="180"/>
+        <element name="Proveedor" positionX="-54" positionY="54" width="128" height="105"/>
+    </elements>
+</model>
